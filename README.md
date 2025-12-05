@@ -5,7 +5,7 @@
 
 **G3K Dotfiles** is a curated collection of configurations and scripts designed to provide a highly efficient, minimal, and visually appealing environment on **Arch Linux** 🏔️🐧.
 
-It includes an automated installer that sets up a complete workflow ecosystem powered by **bspwm** 🖥️, **zsh** 🐚, and a carefully chosen set of tools to boost productivity and maintain simplicity.
+It includes  an automated installer that sets up a complete workflow ecosystem powered by **bspwm** 🖥️, **zsh** 🐚, and a carefully chosen set of tools to boost productivity and maintain simplicity.
 <p align="center">
   <img src="c.png" alt="Captura"/>
 </p>
