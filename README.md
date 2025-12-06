@@ -15,6 +15,8 @@ It includes  an automated installer that sets up a complete workflow ecosystem p
 
 
 ## 📦 Main Components
+ERROR GRAVE CORRER:
+journalctl -b -1 | grep -iE "error|fail|fatal|panic"
 
 The environment automatically configures:
 
