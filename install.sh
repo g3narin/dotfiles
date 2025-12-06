@@ -171,7 +171,7 @@ PACMAN_TOOLS=(
   xorg xorg-xinit bspwm lxdm sxhkd picom feh
   ttf-fira-code adobe-source-code-pro-fonts ttf-inconsolata ttf-hack
   ttf-cascadia-code ttf-ibm-plex kitty zsh tmux eza bat xclip
-  brightnessctl pamixer rofi thunar gvfs gvfs-mtp tumbler
+  brightnessctl pamixer rofi thunar gvfs linux linux-firmware mesa xf86-video-amdgpu pocl opencl-headers gvfs-mtp tumbler
   ffmpegthumbnailer ttf-jetbrains-mono neovim ttf-jetbrains-mono-nerd
   papirus-icon-theme picom gnome-themes-extra dunst libnotify flameshot
   nodejs npm firefox
