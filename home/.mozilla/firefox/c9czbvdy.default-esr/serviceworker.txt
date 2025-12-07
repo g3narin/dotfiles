@@ -1,0 +1,14 @@
+10
+
+https://lichess.org/
+https://lichess.org/assets/compiled/serviceWorker.KFXPFXRY.js?asset-url=https%3A%2F%2Flichess1.org
+false
+{ca464d11-c6bc-4a5f-99ae-61a75aaa4aaf}
+1
+1765133995949787
+1765133995952395
+1765133995905158
+0
+true
+0
+#

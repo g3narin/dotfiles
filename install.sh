@@ -49,8 +49,8 @@ _⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠈⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
 ⡆⠀⣠⣾⣿⠟⢋⣿⣿⣿⣿⣿⣿⣿⣦⣝⠿⣿⣿⣷⣍⠻⠄⣿⢫⡷⡇⣿⣾⠼⠆⠐⢢⢀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⢠⢃⡟⢜⠦⡫⠲⡜
 ⣷⠀⢹⠟⠁⣠⡟⢉⡀⠐⣿⣿⣿⣿⣿⣿⣷⣮⣭⣛⣛⠿⠦⠬⠍⢋⡡⡷⡯⣿⠂⠀⠡⡂⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⣈⠔⡐⠠⢃⠎⡰⡩⣚⢍⢗⡩
 ⣿⣧⢀⣤⣾⣿⣷⠟⠁⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣞⣻⠇⡗⣿⢿⣽⠀⢉⠄⠐⡡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠄⡡⢀⢎⠔⡡⣑⢎⢌⡱⡃⠜        
-                        Made by: g3kzzz
-            Repo: https://github.com/g3kzzz/dotfiles            
+                        Made by: g3narin
+            Repo: https://github.com/g3narin/dotfiles            
 "
 
 # -------------------------
@@ -174,10 +174,10 @@ PACMAN_TOOLS=(
   brightnessctl pamixer rofi thunar gvfs linux linux-firmware mesa xf86-video-amdgpu pocl opencl-headers gvfs-mtp tumbler
   ffmpegthumbnailer ttf-jetbrains-mono neovim ttf-jetbrains-mono-nerd
   papirus-icon-theme picom gnome-themes-extra dunst libnotify flameshot
-  nodejs npm firefox
+  nodejs npm linux-lts linux-lts-headers
 )
 
-YAY_TOOLS=( eww bash-language-server xautolock i3lock-color )
+YAY_TOOLS=( eww firefox-esr-bin bash-language-server xautolock i3lock-color )
 
 print_step "[+] Installing PACMAN tools..."
 install_pacman "${PACMAN_TOOLS[@]}"
@@ -213,8 +213,8 @@ sleep 0.5
 # STEP 9 - DOTFILES & USER FOLDERS
 # ============================================================
 print_step "[+] Creating folders and applying dotfiles..."
-mkdir -p "$HOME"/{Documents,CTF,Downloads,Pictures/Clipboard}
-git clone https://github.com/g3kzzz/dotfiles &>/dev/null || true
+mkdir -p "$HOME"/{Desktop,CTF,Downloads,Pictures/Clipboard}
+git clone https://github.com/g3narin/dotfiles &>/dev/null || true
 cp -r dotfiles/config/* ~/.config/ 2>/dev/null || true
 cp -r dotfiles/home/.mozilla ~/ 2>/dev/null || true
 cp -f dotfiles/home/.zshrc ~/.zshrc 2>/dev/null || true
@@ -237,7 +237,7 @@ sleep 0.5
 print_step "[+] SSH Key Setup"
 sleep 0.4
 
-DEFAULT_USER="g3kzzz"
+DEFAULT_USER="g3narin"
 
 print_step "Choose SSH key generation mode:\n  1) Default — NO passphrase (automatic, less secure)\n  2) Secure  — Enter passphrase (recommended)"
 read -p "Select option [1]: " mode_choice
@@ -347,13 +347,14 @@ fi
 print_step "[✓] SSH setup complete. Keys ready to add to GitHub/GitLab/etc."
 sleep 0.8
 
+sudo dracut --regenerate-all --force
+
 # ============================================================
 # STEP 12 - CLEANUP
 # ============================================================
 print_step "[+] Cleaning up sudoers..."
 run_sudo rm -f "$TMP_SUDOERS" || true
 sleep 0.6
-
 # ============================================================
 # DONE
 # ============================================================
