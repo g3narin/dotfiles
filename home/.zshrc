@@ -6,13 +6,29 @@ export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+
+# ----------------------------
+# Git branch limpio y estable
+# ----------------------------
+autoload -Uz vcs_info
+
+# Habilitar git
+zstyle ':vcs_info:*' enable git
+
+# Git: formato amarillo suave y limpio
+zstyle ':vcs_info:git:*' formats '%F{220}-[%F{220} %b%F{220}]%f'
+zstyle ':vcs_info:git:*' actionformats '%F{220}-[%F{220} %b%F{202}*%F{220}]%f'
+
+# Registrar vcs_info sin romper otros hooks
+precmd_functions+=(vcs_info)
 
 # ----------------------------
 # Prompt personalizado con Git
 # ----------------------------
-PS1="%{$fg[blue]%}%B[%b%{$fg[cyan]%}%n%{$fg[grey]%}%B %F{cyan}✘%f %b%{$fg[cyan]%}%m%{$fg[blue]%}%B]-%b%{$fg[blue]%}%B[%b%{$fg[white]%}%~%{$fg[blue]%}%B]%b
+PS1="%{$fg[blue]%}%B[%b%{$fg[cyan]%}%n%{$fg[grey]%}%B %F{cyan}✘%f %b%{$fg[cyan]%}%m%{$fg[blue]%}%B]-%b%{$fg[blue]%}%B[%b%{$fg[white]%}%~%{$fg[blue]%}%B]%b\${vcs_info_msg_0_}
 %{$fg[cyan]%}%B>>>%b%{$reset_color%} "
+
 # ----------------------------
 # Colores para archivos (LS_COLORS)
 # ----------------------------
@@ -40,3 +56,5 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196'
 # ----------------------------
 # PATH extra
 # ----------------------------
+export PATH="$HOME/.bin:$PATH"
+
