@@ -1,0 +1,22 @@
+/* Hace que los bookmarks se distribuyan en todo el ancho */
+#PersonalToolbar {
+  display: flex !important;
+}
+
+#PlacesToolbarItems {
+  display: flex !important;
+  flex: 1 !important;
+  justify-content: space-between !important; /* distribuye todo */
+}
+
+/* Ajusta botones y separadores para que se expandan */
+#PlacesToolbarItems > * {
+  flex: 1 1 auto !important;
+  text-align: center !important;
+}
+
+/* Hace los separadores visibles y estirados */
+toolbarseparator {
+  width: 100% !important;
+}
+
